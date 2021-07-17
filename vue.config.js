@@ -4,4 +4,14 @@ module.exports = {
   //   : '/',
   publicPath: '/',
   outputDir: 'public',
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.md$/i,
+          loader: "raw-loader",
+        },
+      ],
+    },
+  },
 }

@@ -7,24 +7,6 @@
       <h2 class="text-center text-white text-xl font-semibold">Loading...</h2>
       <p class="w-1/3 text-center text-white">This may take a few seconds, please don't close this page.</p>
     </div> -->
-    <!-- <el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
-
-    <el-dialog
-      title="提示"
-      v-model="centerDialogVisible"
-      width="30%"
-      destroy-on-close
-      center>
-      <span>需要注意在 Dialog 打开前是这条内容和下面的内容都是不会被渲染的</span>
-      <strong>额外的内容</strong>
-      <template #footer>
-        <span class="dialog-footer">
-          <el-button @click="centerDialogVisible = false">取 消</el-button>
-          <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
-        </span>
-      </template>
-
-    </el-dialog> -->
 
    <div class="">
       <div  class="mt-100 bg-gray-200 rounded py-20  px-0 h-screen flex flex-col items-center justify-items-center ">
@@ -108,9 +90,6 @@
             </div>
         </div>
 
-        
-        
-        
         <!-- User profile image -->
         <img class="rounded-full h-32 w-32" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user avatar" />
         <form method="post" class="mt-8 mb-4">
@@ -132,78 +111,22 @@
       </div>
     </div>
 </template>
+
 <script lang="ts">
 import { defineComponent, watch, reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-// import { Dialog, DialogOverlay, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-// import { ExclamationIcon } from '@heroicons/vue/outline
 
 // Vuex
-// import { useStore } from '@/store'
-
-// import { LoginState } from '@/model/Login/Login'
-// import { AccountInfo } from '@/model/Login/AccountInfo'
-
 export default defineComponent({
   components: {
-    // Dialog,
-    // DialogOverlay,
-    // DialogTitle,
-    // TransitionChild,
-    // TransitionRoot,
-    // ExclamationIcon,
   },
   setup() {
     // const store = useStore()
     const open = ref(false);
     const route = useRoute() // for route params
     const router = useRouter()
-    // const loginState: LoginState = reactive({
-    //   Account: '',
-    //   Password: '',
-    //   IsValidUI: true,
-    //   IsUILoading: false,
-    // })
-
-    // const onClickLoginBtn = async(e: { preventDefault: () => void }) => {
-    //   e.preventDefault()
-    //   if(loginState.IsUILoading === true) {
-    //     return  
-    //   }
-    //   localStorage.removeItem('LOGIN_EMAIL')
-    //   localStorage.setItem('LOGIN_EMAIL', loginState.Account)
-    //   loginState.IsUILoading = true
-    //   loginState.IsValidUI = true
-    //   // console.log("onClickLoginBtn loginState.Password",loginState.Password)
-    //   await store.dispatch('LOGIN_RESPONSE_DATA', {
-    //     Account: loginState.Account,
-    //     Password: loginState.Password,
-    //   })
-    //   // console.log('store.state.userloginData',store.state.userloginData)
-    //   const loginParam: AccountInfo = JSON.parse(JSON.stringify(store.state.userloginData))
-    //   console.log('loginParam',loginParam)
-    //   if (loginParam.IsValid === true && loginParam.LoginId !== '' && loginParam.Type === 'r2d2') {
-    //       loginState.IsUILoading = false
-    //       router.push({ path: '/table' })
-    //   } else {
-    //       loginState.IsUILoading = false
-    //       loginState.IsValidUI = false
-    //   }
-    // }
-
-    // watch(loginState,(oldVal, newVal) => {
-    //   console.log('old loginState',oldVal)
-    //   console.log('new loginState', newVal)
-    // })
-
-    // const open = ref(true)
-
     return {
       open,
-      // loginState,
-      // onClickLoginBtn,
-      // open,
-      // centerDialogVisible: ref(false),
     }
   },
 })
