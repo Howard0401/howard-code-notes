@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@kangc/v-md-editor": "^2.3.5",
+    "@tailwindcss/typography": "^0.4.1",
     "@types/prismjs": "^1.16.6",
     "codemirror": "^5.62.0",
     "core-js": "^3.6.5",
     "postcss": "^7.0.36",
     "raw-loader": "^4.0.2",
     "vue": "^3.1.4",
+    "vue-disqus": "^5.1.0",
     "vue-router": "^4.0.0-0",
     "vue3-markdown-it": "^1.0.9",
     "vuex": "^4.0.0-0"

@@ -8,12 +8,28 @@ const routes: Array<RouteRecordRaw> = [
     component: Home
   },
   {
+    path: '/backend',
+    name: 'backend',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Categories/Backend.vue'),
+    meta: {
+      layout: 'backend',
+      title: 'backend',
+    }
+  },
+  {
     path: '/landingPage',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/landingPage.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/landingPage.vue'),
+    meta: {
+      layout: 'landingPage',
+      title: 'landingPage',
+    }
   },
   {
     path: '/login',

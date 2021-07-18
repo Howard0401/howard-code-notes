@@ -1,37 +1,44 @@
 <template>
-  <div class="grid grid-cols-12 h-full">
+  <div class="col-span-12 items-center transition duration-400 transform h-customContent lg:mb-12"
+      :class="[sidebar.sidebarState.isShink ? 'lg:-ml-40 lg:-mr-36 lg:-translate-x-32 lg:ease-in' : 'lg:-mr-32 lg:-translate-x-32 lg:ease-out']"
+  >
+    <v-md-editor :include-level="[1, 2, 3, 4]" v-model="markdown" height="50rem"  class="text-left" ></v-md-editor>
+    <button @click="onClickSwithEditOrPreview">ssss</button>
     
-    <div class="col-span-2 h-screen bg-green-400">
-      <Sidebar/>
-    </div>
-    <div class="col-span-10 h-screen  bg-green-400"
-    >
-      <div class="col-span-12 h-10 bg-gray-300 transition duration-100 transform"
-          :class="[sidebar.sidebarState.isShink ? ' -ml-80 -lg:translate-x-80 lg:ease-in' : '-ml-52 -lg:translate-x-36 lg:ease-out']"
-      ></div>
-      <div class="col-span-3 w-80">
-        <v-md-editor v-model="ttt" mode="preview" height="400px" width="400px" class=""></v-md-editor>
-      </div>
-    </div>
+  </div> 
+  <div class="col-span-12 ml-80">
+    <Disqus />
   </div>
+
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import Sidebar from '@/components/Sidebar.vue'
 import { sidebar } from '@/hooks/useSidebarState'
 // import Markdown from 'vue3-markdown-it';
-import ttt from '@/assets/ttt.md'
+import markdown from '@/assets/ttt.md'
 export default defineComponent({
   components: {
-    Sidebar,
+    // Sidebar,
     // Markdown
   },
-  setup() {
+  inheritAttrs: false,
+  setup(props) {
+    const swithcEdit = ref(false)
+    const onClickSwithEditOrPreview = () => {
+      swithcEdit.value = !swithcEdit.value
+    }
     return  {
       sidebar,
       text: '',
-      ttt
+      markdown,
+      swithcEdit,
+      onClickSwithEditOrPreview,
     }
   },
 })
 </script>
+
+<style scoped>
+
+</style>
